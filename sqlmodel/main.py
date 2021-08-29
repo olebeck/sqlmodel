@@ -406,6 +406,7 @@ def get_sqlachemy_type(field: ModelField) -> Any:
         return AutoString
     if issubclass(field.type_, uuid.UUID):
         return GUID
+    return field.type_
 
 
 def get_column_from_field(field: ModelField) -> Column:
